@@ -1,17 +1,17 @@
 /**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Header File
+  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Source File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    mcc.h
+    clock.h
 
   @Summary:
-    This is the mcc.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the clock.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description:
-    This file will be removed in future MCC releases. Use system.h instead.
+    This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
         Device            :  PIC24FJ64GA702
@@ -42,26 +42,39 @@
     TERMS.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "system.h"
-#include "clock.h"
-#include "pin_manager.h"
-#include <stdint.h>
+#ifndef CLOCK_H
+#define	CLOCK_H
+
+/**
+  Section: Included Files
+*/
+
 #include <stdbool.h>
 
-#include "interrupt_manager.h"
-#include "traps.h"
-#include "i2c2.h"
-#include "i2c1.h"
-#include "tmr3.h"
-#include "uart1.h"
-#include "uart2.h"
+#ifndef _XTAL_FREQ
+#define _XTAL_FREQ  16000000UL
+#endif
 
-#warning "This file will be removed in future MCC releases. Use system.h instead."
+#define CLOCK_SystemFrequencyGet()        (16000000UL)
 
-#endif	/* MCC_H */
+#define CLOCK_PeripheralFrequencyGet()    (CLOCK_SystemFrequencyGet() / 2)
+
+#define CLOCK_InstructionFrequencyGet()   (CLOCK_SystemFrequencyGet() / 2)
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Initializes the oscillator to the default states configured in the
+ *                  MCC GUI
+ * @Example
+    CLOCK_Initialize(void);
+ */
+void CLOCK_Initialize(void);
+
+
+#endif	/* CLOCK_H */
 /**
  End of File
 */

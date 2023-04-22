@@ -63,8 +63,8 @@ void UART1_Initialize(void)
     U1MODE = (0x8008 & ~(1<<15));  // disabling UARTEN bit
     // UTXISEL0 TX_ONE_CHAR; UTXINV disabled; URXEN disabled; OERR NO_ERROR_cleared; URXISEL RX_ONE_CHAR; UTXBRK COMPLETED; UTXEN disabled; ADDEN disabled; 
     U1STA = 0x00;
-    // BaudRate = 9600; Frequency = 4000000 Hz; U1BRG 103; 
-    U1BRG = 0x67;
+    // BaudRate = 9600; Frequency = 8000000 Hz; U1BRG 207; 
+    U1BRG = 0xCF;
     // ADMADDR 0; ADMMASK 0; 
     U1ADMD = 0x00;
     
@@ -112,6 +112,16 @@ bool UART1_IsTxDone(void)
     return U1STAbits.TRMT;
 }
 
+int __attribute__((__section__(".libc.write"))) write(int handle, void *buffer, unsigned int len) 
+{
+    unsigned int i;
+
+    for (i = len; i; --i)
+    {
+        UART1_Write(*(char*)buffer++);
+    }
+    return(len);
+}
 
 /*******************************************************************************
 

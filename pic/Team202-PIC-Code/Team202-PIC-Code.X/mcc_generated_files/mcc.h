@@ -1,17 +1,17 @@
 /**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Source File
+  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Header File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    system.h
+    mcc.h
 
   @Summary:
-    This is the system.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the mcc.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+    This file will be removed in future MCC releases. Use system.h instead.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
         Device            :  PIC24FJ64GA702
@@ -42,29 +42,27 @@
     TERMS.
 */
 
-#ifndef _XTAL_FREQ
-#define _XTAL_FREQ  8000000UL
-#endif
+#ifndef MCC_H
+#define	MCC_H
+#include <xc.h>
+#include "system.h"
+#include "clock.h"
+#include "pin_manager.h"
+#include <stdint.h>
+#include <stdbool.h>
 
-#include "xc.h"
-#include "stdint.h"
+#include "i2c1.h"
+#include "i2c2.h"
+#include "interrupt_manager.h"
+#include "traps.h"
+#include "uart1.h"
+#include "uart2.h"
+#include "tmr3.h"
+#include "tmr2.h"
 
-#ifndef SYSTEM_H
-#define	SYSTEM_H
+#warning "This file will be removed in future MCC releases. Use system.h instead."
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
- */
-void SYSTEM_Initialize(void);
-#endif	/* SYSTEM_H */
+#endif	/* MCC_H */
 /**
  End of File
 */

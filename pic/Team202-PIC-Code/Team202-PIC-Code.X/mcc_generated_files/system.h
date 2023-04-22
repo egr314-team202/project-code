@@ -1,25 +1,25 @@
 /**
-  System Interrupts Generated Driver File 
+  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Source File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    interrupt_manager.h
+    system.h
 
   @Summary:
-    This is the generated driver implementation file for setting up the
-    interrupts using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the system.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description:
-    This source file provides implementations for PIC24 / dsPIC33 / PIC32MM MCUs interrupts.
-    Generation Information : 
+    This header file provides implementations for driver APIs for all modules selected in the GUI.
+    Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
         Device            :  PIC24FJ64GA702
     The generated drivers are tested against the following:
         Compiler          :  XC16 v1.70
         MPLAB             :  MPLAB X v5.50
 */
+
 /*
     (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
@@ -42,30 +42,29 @@
     TERMS.
 */
 
-/**
-    Section: Includes
-*/
-#include <xc.h>
+#ifndef _XTAL_FREQ
+#define _XTAL_FREQ  16000000UL
+#endif
+
+#include "xc.h"
+#include "stdint.h"
+
+#ifndef SYSTEM_H
+#define	SYSTEM_H
 
 /**
-    void INTERRUPT_Initialize (void)
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Initializes the device to the default states configured in the
+ *                  MCC GUI
+ * @Example
+    SYSTEM_Initialize(void);
+ */
+void SYSTEM_Initialize(void);
+#endif	/* SYSTEM_H */
+/**
+ End of File
 */
-void INTERRUPT_Initialize (void)
-{
-    //    MICI: MI2C1 - I2C1 Master Events
-    //    Priority: 1
-        IPC4bits.MI2C1IP = 1;
-    //    SICI: SI2C1 - I2C1 Slave Events
-    //    Priority: 1
-        IPC4bits.SI2C1IP = 1;
-    //    MICI: MI2C2 - I2C2 Master Events
-    //    Priority: 1
-        IPC12bits.MI2C2IP = 1;
-    //    SICI: SI2C2 - I2C2 Slave Events
-    //    Priority: 1
-        IPC12bits.SI2C2IP = 1;
-    //    TI: T3 - Timer3
-    //    Priority: 1
-        IPC2bits.T3IP = 1;
-
-}

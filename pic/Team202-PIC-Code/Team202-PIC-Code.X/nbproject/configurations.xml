@@ -1,12 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="65">
-  <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
-      <logicalFolder name="MCC Generated Files"
-                     displayName="MCC Generated Files"
-                     projectFiles="true">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configurationDescriptor version="65">
+  <logicalFolder displayName="root" name="root" projectFiles="true">
+    <logicalFolder displayName="Header Files" name="HeaderFiles" projectFiles="true">
+      <logicalFolder displayName="MCC Generated Files" name="MCC Generated Files" projectFiles="true">
         <itemPath>mcc_generated_files/i2c2.h</itemPath>
         <itemPath>mcc_generated_files/i2c1.h</itemPath>
         <itemPath>mcc_generated_files/clock.h</itemPath>
@@ -18,18 +13,15 @@
         <itemPath>mcc_generated_files/traps.h</itemPath>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
         <itemPath>mcc_generated_files/tmr3.h</itemPath>
+        <itemPath>mcc_generated_files/tmr2.h</itemPath>
       </logicalFolder>
+      <itemPath>eepromI2C.h</itemPath>
+      <itemPath>project_functions.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
+    <logicalFolder displayName="Linker Files" name="LinkerScript" projectFiles="true">
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
-      <logicalFolder name="MCC Generated Files"
-                     displayName="MCC Generated Files"
-                     projectFiles="true">
+    <logicalFolder displayName="Source Files" name="SourceFiles" projectFiles="true">
+      <logicalFolder displayName="MCC Generated Files" name="MCC Generated Files" projectFiles="true">
         <itemPath>mcc_generated_files/clock.c</itemPath>
         <itemPath>mcc_generated_files/uart2.c</itemPath>
         <itemPath>mcc_generated_files/i2c2.c</itemPath>
@@ -41,12 +33,13 @@
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
         <itemPath>mcc_generated_files/tmr3.c</itemPath>
+        <itemPath>mcc_generated_files/tmr2.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
+      <itemPath>eepromI2C.c</itemPath>
+      <itemPath>project_functions.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
+    <logicalFolder displayName="Important Files" name="ExternalFiles" projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>PIC-Subsystem.mc3</itemPath>
     </logicalFolder>
@@ -57,9 +50,9 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC24FJ64GA702</targetDevice>
-        <targetHeader></targetHeader>
-        <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <targetHeader/>
+        <targetPluginBoard/>
+        <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>2.00</languageToolchainVersion>
         <platform>3</platform>
@@ -79,7 +72,7 @@
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>false</parseOnProdLoad>
-          <alternateLoadableFile></alternateLoadableFile>
+          <alternateLoadableFile/>
         </loading>
         <subordinates>
         </subordinates>
@@ -87,9 +80,9 @@
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeUseCleanTarget>false</makeUseCleanTarget>
-        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPreStep/>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPostStep/>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -224,6 +217,14 @@
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
       </C30Global>
+      <Tool>
+        <property key="memories.programmemory.ranges" value="0-aeff"/>
+        <property key="programmerToGoFilePath" value="C:/Users/kk6ax/MPLABXProjects/Team202-PIC-Code.X/debug/default/Team202-PIC-Code_ptg"/>
+      </Tool>
+      <pk4hybrid>
+        <property key="memories.programmemory.ranges" value="0-aeff"/>
+        <property key="programmerToGoFilePath" value="C:/Users/kk6ax/MPLABXProjects/Team202-PIC-Code.X/debug/default/Team202-PIC-Code_ptg"/>
+      </pk4hybrid>
     </conf>
   </confs>
 </configurationDescriptor>

@@ -1,25 +1,25 @@
 /**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Source File
+  System Interrupts Generated Driver File 
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    clock.h
+    interrupt_manager.h
 
   @Summary:
-    This is the clock.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the generated driver implementation file for setting up the
+    interrupts using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
+    This source file provides implementations for PIC24 / dsPIC33 / PIC32MM MCUs interrupts.
+    Generation Information : 
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
         Device            :  PIC24FJ64GA702
     The generated drivers are tested against the following:
         Compiler          :  XC16 v1.70
         MPLAB             :  MPLAB X v5.50
 */
-
 /*
     (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
@@ -42,39 +42,36 @@
     TERMS.
 */
 
-#ifndef CLOCK_H
-#define	CLOCK_H
-
 /**
-  Section: Included Files
+    Section: Includes
 */
+#include <xc.h>
 
-#include <stdbool.h>
-
-#ifndef _XTAL_FREQ
-#define _XTAL_FREQ  8000000UL
-#endif
-
-#define CLOCK_SystemFrequencyGet()        (8000000UL)
-
-#define CLOCK_PeripheralFrequencyGet()    (CLOCK_SystemFrequencyGet() / 2)
-
-#define CLOCK_InstructionFrequencyGet()   (CLOCK_SystemFrequencyGet() / 2)
 /**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    CLOCK_Initialize(void);
- */
-void CLOCK_Initialize(void);
-
-
-#endif	/* CLOCK_H */
-/**
- End of File
+    void INTERRUPT_Initialize (void)
 */
+void INTERRUPT_Initialize (void)
+{
+    //    IOCI: IOC -  Interrupt On Change Interrupt
+    //    Priority: 1
+        IPC4bits.IOCIP = 1;
+    //    MICI: MI2C1 - I2C1 Master Events
+    //    Priority: 1
+        IPC4bits.MI2C1IP = 1;
+    //    SICI: SI2C1 - I2C1 Slave Events
+    //    Priority: 1
+        IPC4bits.SI2C1IP = 1;
+    //    MICI: MI2C2 - I2C2 Master Events
+    //    Priority: 1
+        IPC12bits.MI2C2IP = 1;
+    //    SICI: SI2C2 - I2C2 Slave Events
+    //    Priority: 1
+        IPC12bits.SI2C2IP = 1;
+    //    TI: T3 - Timer3
+    //    Priority: 1
+        IPC2bits.T3IP = 1;
+    //    TI: T2 - Timer2
+    //    Priority: 1
+        IPC1bits.T2IP = 1;
+
+}

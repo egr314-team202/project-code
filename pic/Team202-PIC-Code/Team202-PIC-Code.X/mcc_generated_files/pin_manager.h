@@ -1257,6 +1257,189 @@
 */
 void PIN_MANAGER_Initialize (void);
 
+/**
+  @Summary
+    Callback for BUTTON2 Pin.
+
+  @Description
+    This routine is callback for BUTTON2 Pin
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+ 
+  @Example 
+    <code>
+        BUTTON2_SetInterruptHandler(&BUTTON2_CallBack);
+    </code>
+*/
+void BUTTON2_CallBack(void);
+
+/**
+  @Summary
+    Callback for BUTTON3 Pin.
+
+  @Description
+    This routine is callback for BUTTON3 Pin
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+ 
+  @Example 
+    <code>
+        BUTTON3_SetInterruptHandler(&BUTTON3_CallBack);
+    </code>
+*/
+void BUTTON3_CallBack(void);
+
+/**
+  @Summary
+    Callback for BUTTON1 Pin.
+
+  @Description
+    This routine is callback for BUTTON1 Pin
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+ 
+  @Example 
+    <code>
+        BUTTON1_SetInterruptHandler(&BUTTON1_CallBack);
+    </code>
+*/
+void BUTTON1_CallBack(void);
+
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        BUTTON2_SetInterruptHandler(&BUTTON2_CallBack);
+    </code>
+*/
+void BUTTON2_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        BUTTON2_SetIOCInterruptHandler(&BUTTON2_CallBack);
+    </code>
+*/
+void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse BUTTON2_SetInterruptHandler instead."))) BUTTON2_SetIOCInterruptHandler(void *handler);
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        BUTTON3_SetInterruptHandler(&BUTTON3_CallBack);
+    </code>
+*/
+void BUTTON3_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        BUTTON3_SetIOCInterruptHandler(&BUTTON3_CallBack);
+    </code>
+*/
+void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse BUTTON3_SetInterruptHandler instead."))) BUTTON3_SetIOCInterruptHandler(void *handler);
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        BUTTON1_SetInterruptHandler(&BUTTON1_CallBack);
+    </code>
+*/
+void BUTTON1_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        BUTTON1_SetIOCInterruptHandler(&BUTTON1_CallBack);
+    </code>
+*/
+void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse BUTTON1_SetInterruptHandler instead."))) BUTTON1_SetIOCInterruptHandler(void *handler);
 
 
 #endif
